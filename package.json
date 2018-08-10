@@ -12,7 +12,15 @@
     "frontend:build": "gulp frontend:build",
     "backend:build": "gulp gobuild"
   },
-  "keywords": ["netlify","go","golang","lambda","aws","netlify functions","lambda starter kit"],
+  "keywords": [
+    "netlify",
+    "go",
+    "golang",
+    "lambda",
+    "aws",
+    "netlify functions",
+    "lambda starter kit"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
