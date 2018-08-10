@@ -1,0 +1,15 @@
+[build]
+    command = "make prod"
+    publish = "public"
+    functions = "./bin"
+
+[build.environment]
+    HUGO_VERSION = "0.46"
+    GO_IMPORT_PATH = "github.com/randallmlough/netlifygofunctions.git"
+    
+[context.production.environment]
+    HUGO_ENV = "production"
+    NODE_ENV = "production"
+
+[context.deploy-preview]
+    command = "npm run build:preview"

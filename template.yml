@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Local dev environment for testing Netlify functions
+Globals:
+  Function:
+    Runtime: go1.x
+    Timeout: 180
+    Environment:
+      Variables:
+        ENV_KEY: SOMELOCALKEY
+Resources:
+  Hello:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: bin/
+      Handler: hello
+      Events:
+        ConnectionHandler:
+          Type: Api
+          Properties:
+            Path: /.netlify/functions/hello
+            Method: get
+  Form:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: bin/
+      Handler: form
+      Events:
+        FormHandler:
+          Type: Api
+          Properties:
+            Path: /.netlify/functions/form
+            Method: post
+  ENV:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: bin/
+      Handler: env
+      Environment:
+        Variables:
+          NAME: I will be overridden by the env.json file
+      Events:
+        EnvHandler:
+          Type: Api
+          Properties:
+            Path: /.netlify/functions/env
+            Method: any

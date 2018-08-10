@@ -1,0 +1,28 @@
+{
+  "name": "netlify-go-functions",
+  "version": "1.0.0",
+  "description": "A simple starter kit for Netlify Go Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently 'npm run frontend:server' 'npm run backend:server'",
+    "frontend:server": "gulp frontend:server",
+    "backend:server": "gulp lambda",
+    "build": "npm run frontend:build && npm run backend:build",
+    "frontend:build": "gulp frontend:build",
+    "backend:build": "gulp gobuild"
+  },
+  "keywords": ["netlify","go","golang","lambda","aws","netlify functions","lambda starter kit"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "concurrently": "^3.6.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.5.0",
+    "http-proxy-middleware": "^0.18.0",
+    "run-sequence": "^2.2.1"
+  }
+}
