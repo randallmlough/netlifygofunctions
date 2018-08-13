@@ -21,7 +21,7 @@
     "netlify functions",
     "lambda starter kit"
   ],
-  "author": "",
+  "author": "Randy Lough",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.3",
